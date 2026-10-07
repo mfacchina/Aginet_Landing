@@ -8,8 +8,8 @@ const WA_NUMBER = "5491153539292"; // (54 11) 5353-9292 — confirmar que sea el
 /* Páginas propias de cada app. Pegá la URL cuando esté publicada y el botón
    "Conocer ..." aparece solo en la tarjeta. Vacío = el botón queda oculto. */
 const APP_LINKS = {
-  aquacontrol: "https://aquacontrol.aginet.com.ar/",
-  agipedidos: "https://agipedidos.aginet.com.ar/",
+  aquacontrol: "https://aginet.com.ar/aquacontrol/",
+  agipedidos: "https://aginet.com.ar/agipedidos/",
   agivision: "https://agivision.aginet.com.ar/",
 };
 
