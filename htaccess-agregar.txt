@@ -1,4 +1,4 @@
-# Aginet SA - configuración Apache para cPanel
+# Aginet SA - líneas para AGREGAR AL FINAL del .htaccess que ya existe en public_html (no reemplazar el archivo)
 
 # --- Forzar HTTPS y dominio sin www ---
 # Descomentar estas 5 líneas DESPUÉS de que AutoSSL haya emitido el certificado.
