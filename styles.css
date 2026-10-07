@@ -89,6 +89,7 @@ h2 em, h1 em { font-style: normal; background: linear-gradient(90deg, #c4b5fd, v
 .brand__logo--footer { height: 40px; }
 .nav__links { display: none; gap: 1.8rem; align-items: center; font-weight: 600; font-size: .95rem; color: var(--muted); }
 .nav__links a { position: relative; padding: .25rem 0; transition: color .2s; }
+@media (max-width: 899px) { .nav__links a { padding: .5rem 0; width: 100%; } }
 .nav__links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
 .nav__links a:hover, .nav__links a.is-active { color: var(--text); }
 .nav__links a:hover::after, .nav__links a.is-active::after { transform: scaleX(1); }
@@ -104,7 +105,7 @@ h2 em, h1 em { font-style: normal; background: linear-gradient(90deg, #c4b5fd, v
   .nav__links {
     display: flex; flex-direction: column; align-items: flex-start; gap: 1.2rem;
     position: fixed; top: 72px; left: 0; right: 0;
-    padding: 1.5rem var(--gutter) 2rem; font-size: 1.15rem;
+    padding: 1.2rem var(--gutter) 1.8rem; font-size: 1.15rem;
     background: rgba(10, 9, 18, .96); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line);
     transform: translateY(-8px); opacity: 0; pointer-events: none; transition: transform .3s var(--ease), opacity .3s;
   }
@@ -148,7 +149,7 @@ h2 em, h1 em { font-style: normal; background: linear-gradient(90deg, #c4b5fd, v
 @keyframes ticker { to { transform: translateX(-50%); } }
 
 /* ---------- Sections ---------- */
-.section { padding: clamp(72px, 10vw, 128px) 0; }
+.section { padding: clamp(72px, 10vw, 128px) 0; scroll-margin-top: 72px; }
 .section--alt { background: var(--bg-2); border-block: 1px solid var(--line); }
 .section__head { max-width: 760px; margin-bottom: clamp(2.2rem, 5vw, 3.6rem); }
 .section__lead { color: var(--muted); font-size: 1.08rem; margin-top: 1rem; }
@@ -167,7 +168,9 @@ h2 em, h1 em { font-style: normal; background: linear-gradient(90deg, #c4b5fd, v
 .explorer__num { font-size: .78rem; font-weight: 700; color: var(--accent-2); font-variant-numeric: tabular-nums; }
 .explorer__arrow { opacity: 0; transform: translateX(-6px); transition: .25s var(--ease); color: var(--accent); }
 .explorer__item.is-active .explorer__arrow { opacity: 1; transform: none; }
-.explorer__timer { height: 2px; margin: .4rem 1.1rem 0; background: var(--line); border-radius: 2px; overflow: hidden; }
+.explorer__item { scroll-margin-top: 84px; }
+.explorer__timer { display: none; height: 2px; margin: .4rem 1.1rem 0; background: var(--line); border-radius: 2px; overflow: hidden; }
+@media (min-width: 900px) { .explorer__timer { display: block; } }
 .explorer__timer span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
 .explorer__timer.is-running span { animation: timer 6s linear forwards; }
 @keyframes timer { from { width: 0 } to { width: 100% } }
@@ -208,7 +211,7 @@ h2 em, h1 em { font-style: normal; background: linear-gradient(90deg, #c4b5fd, v
 .app p:not(.app__kicker) { color: var(--muted); font-size: .97rem; }
 .app .chips { margin: .2rem 0 .4rem; }
 .app__actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; align-items: center; }
-.app__link { font-weight: 700; color: #c4b5fd; display: inline-flex; gap: .4rem; align-items: center; }
+.app__link { font-weight: 700; color: #c4b5fd; display: inline-flex; gap: .4rem; align-items: center; min-height: 44px; }
 .app__link--site { color: var(--text); padding: .5rem .9rem; border-radius: 999px; border: 1px solid var(--line-strong); transition: border-color .25s, background .25s; }
 .app__link--site:hover { border-color: var(--accent); background: var(--accent-soft); }
 .app__link[hidden] { display: none; }
@@ -280,7 +283,7 @@ h2 em, h1 em { font-style: normal; background: linear-gradient(90deg, #c4b5fd, v
 .contact__list svg { width: 44px; height: 44px; padding: 11px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line-strong); fill: none; stroke: var(--accent-2); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 .contact__list div { display: flex; flex-direction: column; }
 .contact__list span { font-size: .78rem; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
-.contact__list a { font-weight: 600; transition: color .2s; }
+.contact__list a { font-weight: 600; transition: color .2s; display: inline-block; padding: .35rem 0; }
 .contact__list a:hover { color: #c4b5fd; }
 
 .contact__form { display: grid; gap: 1rem; padding: clamp(1.3rem, 3vw, 2rem); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line-strong); }
@@ -304,12 +307,14 @@ h2 em, h1 em { font-style: normal; background: linear-gradient(90deg, #c4b5fd, v
 @media (min-width: 760px) { .footer__inner { grid-template-columns: 1fr auto 1fr; align-items: center; } .footer__copy { text-align: right; } }
 .footer__brand { display: flex; flex-direction: column; align-items: flex-start; gap: .6rem; }
 .footer__brand span { font-size: .82rem; color: var(--faint); }
-.footer__links { display: flex; flex-wrap: wrap; gap: 1.2rem; font-size: .9rem; color: var(--muted); }
+.footer__links { display: flex; flex-wrap: wrap; gap: .2rem 1.2rem; font-size: .9rem; color: var(--muted); }
+.footer__links a { display: inline-block; padding: .6rem 0; }
 .footer__links a:hover { color: var(--text); }
+@media (max-width: 759px) { .footer { padding-bottom: 6rem; } }
 .footer__copy { font-size: .82rem; color: var(--faint); }
 
 /* ---------- WhatsApp flotante ---------- */
-.wa-float { position: fixed; right: 18px; bottom: 18px; z-index: 40; width: 56px; height: 56px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 12px 30px -8px rgba(37, 211, 102, .7); transition: transform .25s var(--ease); }
+.wa-float { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 40; width: 56px; height: 56px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 12px 30px -8px rgba(37, 211, 102, .7); transition: transform .25s var(--ease); }
 .wa-float:hover { transform: scale(1.08); }
 .wa-float svg { width: 28px; height: 28px; fill: #fff; }
 
