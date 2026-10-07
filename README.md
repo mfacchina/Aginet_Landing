@@ -19,7 +19,9 @@ Abrir http://localhost:8765
 
 ## Publicar
 
-Subir el contenido de `sitio-web/` a la raíz del hosting (cPanel → `public_html`). No hace falta nada más.
+Guía completa paso a paso (archivos, prueba, DNS, SSL, baja de Canva): **[DEPLOY.md](DEPLOY.md)**.
+
+Resumen: subir el contenido de `sitio-web/` a `public_html` de cPanel, apuntar el registro A del dominio al servidor y correr AutoSSL. `.cpanel.yml` permite el deploy automático desde Git Version Control.
 
 ## Cosas para ajustar antes de publicar
 
