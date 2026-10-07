@@ -32,7 +32,7 @@ Elegí una de las dos opciones.
 3. Botón **Upload** → subí `aginet-sitio-web.zip` (está en la carpeta Aginet, al lado de `sitio-web`). El zip **no incluye** `.htaccess` a propósito.
 4. Volvé a File Manager, click derecho sobre el zip → **Extract** → extraer en `public_html`.
 5. Borrá el zip. Tienen que haber aparecido `index.html` (nuevo), `styles.css`, `main.js` y la carpeta `assets/` con `logo.png`, `logo-original.png` y `favicon.png`.
-6. **`.htaccess`:** click derecho sobre el `.htaccess` existente → **Edit**. Sin borrar nada de lo que ya tiene, agregá al final el contenido de `htaccess-agregar.txt` (está en la carpeta `sitio-web`). Si el archivo ya tiene una línea `RewriteEngine On`, no hace falta repetirla. Guardá.
+6. **`.htaccess`:** click derecho sobre el `.htaccess` existente → **Edit**. Sin borrar nada de lo que ya tiene, reemplazá todo el contenido por el de `htaccess-public_html.txt` (ya incluye las reglas previas de HTTPS y PHP, y quita la redirección a remake) (está en la carpeta `sitio-web`). Si el archivo ya tiene una línea `RewriteEngine On`, no hace falta repetirla. Guardá.
    Si `.htaccess` no se ve, en File Manager → **Settings** (arriba a la derecha) → tildá "Show Hidden Files".
 
 Para volver atrás en cualquier momento: renombrar `index.html` a `index_nuevo.html` y `index_viejo_2024.html` a `index.html`.
@@ -98,7 +98,7 @@ Tiene que responder 205.234.134.73.
 2. Tildá `aginet.com.ar` y `www.aginet.com.ar` → **Run AutoSSL**. Tarda unos minutos. Solo funciona cuando el DNS ya apunta a tu servidor (Paso 3).
 3. Cuando aparezca el candado verde, forzá HTTPS. Dos formas, usá una sola:
    - cPanel → **Domains** → activá el switch **Force HTTPS Redirect** del dominio, **o**
-   - en `public_html/.htaccess` descomentá las 5 líneas del bloque "Forzar HTTPS" que agregaste desde `htaccess-agregar.txt` (sacá el `# ` del principio). Ojo: si los teléfonos descargan el provisioning por http, el redirect a https podría romperlo; en ese caso usá el switch de cPanel solo si confirmás que los teléfonos soportan https, o excluí `/provisioning/` agregando `RewriteCond %{REQUEST_URI} !^/provisioning/` antes de la regla.
+   - en `public_html/.htaccess` descomentá las 5 líneas del bloque "Forzar HTTPS" que agregaste desde `htaccess-public_html.txt` (sacá el `# ` del principio). Ojo: si los teléfonos descargan el provisioning por http, el redirect a https podría romperlo; en ese caso usá el switch de cPanel solo si confirmás que los teléfonos soportan https, o excluí `/provisioning/` agregando `RewriteCond %{REQUEST_URI} !^/provisioning/` antes de la regla.
 
 ---
 
