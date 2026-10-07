@@ -23,6 +23,23 @@ Guía completa paso a paso (archivos, prueba, DNS, SSL, baja de Canva): **[DEPLO
 
 Resumen: subir el contenido de `sitio-web/` a `public_html` de cPanel, apuntar el registro A del dominio al servidor y correr AutoSSL. `.cpanel.yml` permite el deploy automático desde Git Version Control.
 
+## Cómo hacer un cambio en la página
+
+1. Editar el archivo que corresponda (ver tabla).
+2. Si tocaste `styles.css` o `main.js`, cambiar el número de `?v=` en `index.html` (dos lugares: el `<link>` del CSS y el `<script>` del JS). Puede ser la fecha, por ejemplo `?v=20261115`. Sin esto, los navegadores siguen usando la versión vieja hasta 7 días.
+3. Guardar en GitHub: `git add -A`, `git commit -m "qué cambió"`, `git push`.
+4. Publicar: en cPanel → File Manager → `public_html` → Upload del archivo cambiado (sobreescribe), **o** si está configurado Git Version Control: Manage → Update from Remote → Deploy HEAD Commit.
+5. Abrir https://aginet.com.ar en incógnito y verificar.
+
+| Qué querés cambiar | Dónde |
+|---|---|
+| Textos de secciones, tarjetas de apps, datos de contacto | `index.html` |
+| Título, bajada, descripción y chips de cada servicio | `main.js`, objeto `SERVICES` |
+| Links a las landings de las apps | `main.js`, objeto `APP_LINKS` |
+| Número de WhatsApp | `main.js` (`WA_NUMBER`) y los `wa.me/...` de `index.html` |
+| Colores, tipografía, espaciados | `styles.css`, variables en `:root` |
+| Logo o favicon | `assets/logo.png`, `assets/favicon.png` |
+
 ## Cosas para ajustar antes de publicar
 
 1. **Número de WhatsApp**: en `main.js` está `WA_NUMBER = "5491153539292"` y en `index.html` los links `wa.me/5491153539292`. Confirmar que sea el WhatsApp comercial (está armado a partir del (54 11) 5353-9292).
