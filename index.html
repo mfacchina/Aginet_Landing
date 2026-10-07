@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aginet SA · Telefonía IP, Call Center, Hosting y Software</title>
+  <meta name="description" content="Aginet SA: centrales IP, telefonía IP, call center, hosting, marketing y servidores para empresas desde 2001. Además desarrollamos AquaControl, AgiPedidos y AgiVision.">
+  <meta name="theme-color" content="#0a0912">
+  <meta property="og:title" content="Aginet SA · Comunicaciones y software para empresas">
+  <meta property="og:description" content="Centrales IP, telefonía IP, call center, hosting, marketing y servidores. Y las apps que desarrollamos para que tu operación funcione sola.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#inicio" class="brand" aria-label="Aginet, inicio">
+      <img class="brand__logo" src="assets/logo.png" alt="Aginet" width="444" height="186">
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#apps">Apps</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://aginet.com.ar/ia/" class="nav__ia">Aginet IA <span>↗</span></a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--sm btn--primary" href="https://wa.me/5491153539292?text=Hola%20Aginet%2C%20quiero%20asesoramiento." target="_blank" rel="noopener">Hablemos</a>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <canvas class="hero__net" id="net" aria-hidden="true"></canvas>
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <p class="eyebrow reveal"><span class="dot"></span> Telecomunicaciones y software · Buenos Aires · desde 2001</p>
+    <h1 class="hero__title reveal">
+      Tu empresa, <em>conectada</em>.<br>
+      Tu operación, <em>automatizada</em>.
+    </h1>
+    <p class="hero__lead reveal">
+      Centrales IP, telefonía, call center, hosting y servidores con soporte real.
+      Y las apps que desarrollamos para que tu negocio funcione solo.
+    </p>
+    <div class="hero__cta reveal">
+      <a class="btn btn--primary" href="https://wa.me/5491153539292?text=Hola%20Aginet%2C%20quiero%20asesoramiento." target="_blank" rel="noopener">
+        Hablemos por WhatsApp
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+    </div>
+
+    <ul class="hero__facts reveal" aria-label="Datos de la empresa">
+      <li><strong>2001</strong><span>Año de fundación</span></li>
+      <li><strong>24/7</strong><span>Soporte y monitoreo</span></li>
+      <li><strong>6</strong><span>Líneas de servicio</span></li>
+      <li><strong>3</strong><span>Apps propias</span></li>
+    </ul>
+  </div>
+
+  <a href="#servicios" class="hero__scroll" aria-label="Bajar a servicios"><span></span></a>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Centrales IP</span><i></i><span>Telefonía IP</span><i></i><span>Call Center</span><i></i><span>Hosting y Web</span><i></i><span>Marketing</span><i></i><span>Servidores</span><i></i>
+    <span>Centrales IP</span><i></i><span>Telefonía IP</span><i></i><span>Call Center</span><i></i><span>Hosting y Web</span><i></i><span>Marketing</span><i></i><span>Servidores</span><i></i>
+  </div>
+</div>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Servicios</p>
+      <h2>Todo lo que tu empresa necesita <em>para comunicarse</em>.</h2>
+      <p class="section__lead">Elegí un servicio para ver qué incluye. Diseñamos cada solución a tu medida y a tu presupuesto.</p>
+    </div>
+
+    <div class="explorer reveal" id="explorer">
+      <div class="explorer__list" role="tablist" aria-label="Servicios">
+        <button class="explorer__item is-active" role="tab" aria-selected="true" data-service="pbx" id="tab-pbx" aria-controls="panel-services">
+          <span class="explorer__num">01</span><span class="explorer__name">Centrales IP</span>
+          <span class="explorer__arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="explorer__item" role="tab" aria-selected="false" data-service="voip" id="tab-voip" aria-controls="panel-services">
+          <span class="explorer__num">02</span><span class="explorer__name">Telefonía IP</span>
+          <span class="explorer__arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="explorer__item" role="tab" aria-selected="false" data-service="cc" id="tab-cc" aria-controls="panel-services">
+          <span class="explorer__num">03</span><span class="explorer__name">Call Center</span>
+          <span class="explorer__arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="explorer__item" role="tab" aria-selected="false" data-service="hosting" id="tab-hosting" aria-controls="panel-services">
+          <span class="explorer__num">04</span><span class="explorer__name">Hosting y Web</span>
+          <span class="explorer__arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="explorer__item" role="tab" aria-selected="false" data-service="mkt" id="tab-mkt" aria-controls="panel-services">
+          <span class="explorer__num">05</span><span class="explorer__name">Marketing</span>
+          <span class="explorer__arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="explorer__item" role="tab" aria-selected="false" data-service="srv" id="tab-srv" aria-controls="panel-services">
+          <span class="explorer__num">06</span><span class="explorer__name">Servidores</span>
+          <span class="explorer__arrow" aria-hidden="true">→</span>
+        </button>
+        <div class="explorer__timer" aria-hidden="true"><span></span></div>
+      </div>
+
+      <div class="explorer__panel" id="panel-services" role="tabpanel" aria-labelledby="tab-pbx">
+        <div class="explorer__icon" id="svcIcon"></div>
+        <h3 class="explorer__title" id="svcTitle"></h3>
+        <p class="explorer__tag" id="svcTag"></p>
+        <p class="explorer__desc" id="svcDesc"></p>
+        <ul class="chips" id="svcFeatures"></ul>
+        <a class="btn btn--primary btn--sm" id="svcCta" href="#contacto">Consultar por este servicio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPS ============ -->
+<section class="section section--alt" id="apps">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Apps propias</p>
+      <h2>Software hecho en Aginet, <em>pensado para operar</em>.</h2>
+      <p class="section__lead">Desarrollamos nuestras propias plataformas para resolver problemas reales de distribución, ventas y análisis de público.</p>
+    </div>
+
+    <div class="apps">
+
+      <!-- AquaControl -->
+      <article class="app reveal" data-tilt>
+        <div class="app__visual app__visual--aqua" aria-hidden="true">
+          <div class="mock mock--map">
+            <div class="mock__bar"><i></i><i></i><i></i></div>
+            <svg viewBox="0 0 200 120">
+              <path class="mock__route" d="M18 96 C 40 60, 70 100, 95 62 S 150 30, 182 48" />
+              <circle class="mock__stop" cx="18" cy="96" r="4"/>
+              <circle class="mock__stop" cx="62" cy="80" r="4"/>
+              <circle class="mock__stop" cx="95" cy="62" r="4"/>
+              <circle class="mock__stop" cx="138" cy="40" r="4"/>
+              <circle class="mock__truck" cx="110" cy="52" r="6"/>
+            </svg>
+            <div class="mock__kpis">
+              <span><b>42</b> visitas</span><span><b>38</b> cobros</span><span class="live">● en vivo</span>
+            </div>
+          </div>
+        </div>
+        <div class="app__body">
+          <p class="app__kicker">Distribuidoras de agua</p>
+          <h3>AquaControl</h3>
+          <p>Clientes, repartos, choferes, cobros, WhatsApp y reportes en tiempo real. App del chofer con GPS en vivo. 100% web, sin instalar nada.</p>
+          <ul class="chips chips--sm">
+            <li>App del chofer</li><li>GPS en tiempo real</li><li>Cuenta corriente</li><li>WhatsApp integrado</li><li>Caja y comisiones</li>
+          </ul>
+          <a class="app__link" href="https://wa.me/5491153539292?text=Hola%2C%20quiero%20una%20demo%20de%20AquaControl." target="_blank" rel="noopener">Pedir demo <span>→</span></a>
+        </div>
+      </article>
+
+      <!-- AgiPedidos -->
+      <article class="app reveal" data-tilt>
+        <div class="app__visual app__visual--pedidos" aria-hidden="true">
+          <div class="mock mock--orders">
+            <div class="mock__bar"><i></i><i></i><i></i></div>
+            <div class="mock__row"><span class="mock__avatar"></span><span class="mock__line"></span><b class="mock__status ok">Confirmado</b></div>
+            <div class="mock__row"><span class="mock__avatar"></span><span class="mock__line w60"></span><b class="mock__status wait">En preparación</b></div>
+            <div class="mock__row"><span class="mock__avatar"></span><span class="mock__line w80"></span><b class="mock__status ok">Entregado</b></div>
+            <div class="mock__row mock__row--new"><span class="mock__avatar"></span><span class="mock__line w50"></span><b class="mock__status new">Nuevo</b></div>
+          </div>
+        </div>
+        <div class="app__body">
+          <p class="app__kicker">Comercios y distribuidoras</p>
+          <h3>AgiPedidos</h3>
+          <p>Tus clientes piden desde el celular y vos recibís todo ordenado en un panel: catálogo, stock, estados y seguimiento de cada pedido.</p>
+          <ul class="chips chips--sm">
+            <li>Catálogo digital</li><li>Pedidos 24/7</li><li>Panel de gestión</li><li>Notificaciones</li>
+          </ul>
+          <a class="app__link" href="https://wa.me/5491153539292?text=Hola%2C%20quiero%20una%20demo%20de%20AgiPedidos." target="_blank" rel="noopener">Pedir demo <span>→</span></a>
+        </div>
+      </article>
+
+      <!-- AgiVision -->
+      <article class="app reveal" data-tilt>
+        <div class="app__visual app__visual--vision" aria-hidden="true">
+          <div class="mock mock--heat">
+            <div class="mock__bar"><i></i><i></i><i></i></div>
+            <div class="mock__grid" id="heatGrid"></div>
+            <div class="mock__kpis">
+              <span><b>1.284</b> personas</span><span><b>4:12</b> permanencia</span>
+            </div>
+          </div>
+        </div>
+        <div class="app__body">
+          <p class="app__kicker">Ferias, stands y retail</p>
+          <h3>AgiVision</h3>
+          <p>Analítica de video con IA: conteo de personas, zonas de permanencia y mapas de calor. Sin reconocimiento facial, 100% anónimo y listo para GDPR.</p>
+          <ul class="chips chips--sm">
+            <li>Conteo de personas</li><li>Mapas de calor</li><li>Zonas y permanencia</li><li>Multicámara</li>
+          </ul>
+          <a class="app__link" href="https://wa.me/5491153539292?text=Hola%2C%20quiero%20una%20demo%20de%20AgiVision." target="_blank" rel="noopener">Pedir demo <span>→</span></a>
+        </div>
+      </article>
+
+    </div>
+
+    <aside class="ia-banner reveal">
+      <div>
+        <p class="eyebrow">Aginet IA</p>
+        <p>¿Buscás automatizar con inteligencia artificial? Conocé <strong>MediTurnos</strong>, <strong>AgiBot</strong> y <strong>AgiVoz</strong>.</p>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="https://aginet.com.ar/ia/">Ir a Aginet IA ↗</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ EMPRESA ============ -->
+<section class="section" id="empresa">
+  <div class="container empresa">
+    <div class="empresa__text reveal">
+      <p class="eyebrow">La empresa</p>
+      <h2>Desde 2001 <em>conectando empresas</em>.</h2>
+      <p>
+        Aginet SA nació en 2001 en Buenos Aires como empresa de telecomunicaciones. Hoy combinamos
+        telefonía IP, infraestructura y desarrollo de software para crear soluciones prácticas y accesibles,
+        tanto para el mercado corporativo como para el residencial.
+      </p>
+      <p>
+        Trabajamos con tecnología probada, equipo propio y un acompañamiento que no termina en la instalación.
+      </p>
+      <div class="empresa__cta">
+        <a class="btn btn--primary" href="#contacto">Contactar</a>
+      </div>
+    </div>
+
+    <ul class="values">
+      <li class="reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Soluciones a medida</h3>
+        <p>Nada enlatado: relevamos tu operación y diseñamos lo que realmente necesitás.</p>
+      </li>
+      <li class="reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l6-6 4 4 6-6"/><path d="M14 9h6v6"/></svg>
+        <h3>Tecnología probada</h3>
+        <p>Asterisk, FreePBX, SIP, cPanel y hardware de primeras marcas, integrados por nuestro equipo.</p>
+      </li>
+      <li class="reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <h3>Soporte real</h3>
+        <p>Monitoreo 24/7 y personas que atienden. Sabés a quién llamar y te responden.</p>
+      </li>
+      <li class="reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+        <h3>Desarrollo propio</h3>
+        <p>Si no existe, lo construimos: dashboards, integraciones, apps y APIs.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section section--alt" id="proceso">
+  <div class="container">
+    <div class="section__head reveal">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2>De la idea a la implementación <em>en 4 pasos</em>.</h2>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><span>01</span><h3>Diagnóstico</h3><p>Analizamos tu caso y detectamos dónde la tecnología genera más impacto.</p></li>
+      <li class="reveal"><span>02</span><h3>Propuesta</h3><p>Diseñamos una solución técnica con alcance, tiempos y costos claros.</p></li>
+      <li class="reveal"><span>03</span><h3>Implementación</h3><p>Instalamos, integramos y probamos hasta que todo funcione en tu operación real.</p></li>
+      <li class="reveal"><span>04</span><h3>Soporte continuo</h3><p>Te acompañamos con monitoreo, mejoras y soporte en el día a día.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section" id="contacto">
+  <div class="container contact">
+    <div class="contact__info reveal">
+      <p class="eyebrow">Contacto</p>
+      <h2>Contanos qué necesitás <em>y lo resolvemos</em>.</h2>
+      <p class="section__lead">Respondemos en horario comercial, y por WhatsApp casi siempre antes.</p>
+
+      <ul class="contact__list">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+          <div><span>Teléfono</span><a href="tel:+541153539292">(54 11) 5353-9292</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <div><span>Ventas</span><a href="mailto:ventas@aginet.com.ar">ventas@aginet.com.ar</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <div><span>Administración</span><a href="mailto:administracion@aginet.com.ar">administracion@aginet.com.ar</a></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><span>Oficina</span><a href="https://maps.google.com/?q=Olazabal+5187,+CABA,+Argentina" target="_blank" rel="noopener">Olazabal 5187, CABA, Argentina</a></div>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact__form reveal" id="contactForm" novalidate>
+      <div class="field">
+        <label for="fName">Nombre</label>
+        <input id="fName" name="name" type="text" autocomplete="name" required placeholder="Tu nombre">
+      </div>
+      <div class="field">
+        <label for="fCompany">Empresa</label>
+        <input id="fCompany" name="company" type="text" autocomplete="organization" placeholder="Nombre de la empresa">
+      </div>
+      <div class="field">
+        <label for="fTopic">Me interesa</label>
+        <select id="fTopic" name="topic">
+          <option>Centrales IP</option>
+          <option>Telefonía IP</option>
+          <option>Call Center</option>
+          <option>Hosting y Web</option>
+          <option>Marketing</option>
+          <option>Servidores</option>
+          <option>AquaControl</option>
+          <option>AgiPedidos</option>
+          <option>AgiVision</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fMsg">Mensaje</label>
+        <textarea id="fMsg" name="message" rows="4" placeholder="Contanos brevemente qué necesitás"></textarea>
+      </div>
+      <button class="btn btn--primary" type="submit">
+        Enviar por WhatsApp
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <p class="form__hint">Se abre WhatsApp con tu mensaje listo para enviar. O escribinos a <a href="mailto:ventas@aginet.com.ar">ventas@aginet.com.ar</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img class="brand__logo brand__logo--footer" src="assets/logo.png" alt="Aginet" width="444" height="186">
+      <span>Telecomunicaciones y software · Buenos Aires</span>
+    </div>
+    <nav class="footer__links" aria-label="Pie de página">
+      <a href="#servicios">Servicios</a>
+      <a href="#apps">Apps</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://aginet.com.ar/ia/">Aginet IA</a>
+    </nav>
+    <p class="footer__copy">© <span id="year"></span> Aginet SA. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5491153539292?text=Hola%20Aginet%2C%20quiero%20asesoramiento." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0012 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 005.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4A9.8 9.8 0 012.1 12C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 012.9 7c0 5.4-4.4 9.8-9.9 9.8zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<script src="main.js" defer></script>
+</body>
+</html>
