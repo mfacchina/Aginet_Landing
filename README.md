@@ -26,5 +26,6 @@ Subir el contenido de `sitio-web/` a la raíz del hosting (cPanel → `public_ht
 1. **Número de WhatsApp**: en `main.js` está `WA_NUMBER = "5491153539292"` y en `index.html` los links `wa.me/5491153539292`. Confirmar que sea el WhatsApp comercial (está armado a partir del (54 11) 5353-9292).
 2. **Logo**: `assets/logo.png` es la versión blanca con fondo transparente generada a partir de `assets/logo-original.png` (que tiene fondo violeta). Si cambia el logo, reemplazar `logo.png` manteniendo fondo transparente.
 3. **AgiPedidos**: no tenía documentación del producto, el texto es un borrador. Editar la tarjeta en `index.html` (buscar `<!-- AgiPedidos -->`).
-4. **Textos de servicios**: están en `main.js`, objeto `SERVICES` (título, bajada, descripción y chips de cada uno).
+4. **Links a las páginas de cada app**: en `main.js`, objeto `APP_LINKS`. Pegar la URL de la landing de AquaControl, AgiPedidos y AgiVision cuando estén publicadas. Mientras el valor esté vacío, el botón "Conocer ..." de esa tarjeta no se muestra.
+5. **Textos de servicios**: están en `main.js`, objeto `SERVICES` (título, bajada, descripción y chips de cada uno).
 5. **Email de contacto**: el formulario abre WhatsApp. Si preferís email real, cambiar el handler del formulario en `main.js` por un servicio tipo Formspree o un endpoint propio.

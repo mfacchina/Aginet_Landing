@@ -5,6 +5,14 @@
 
 const WA_NUMBER = "5491153539292"; // (54 11) 5353-9292 — confirmar que sea el WhatsApp comercial
 
+/* Páginas propias de cada app. Pegá la URL cuando esté publicada y el botón
+   "Conocer ..." aparece solo en la tarjeta. Vacío = el botón queda oculto. */
+const APP_LINKS = {
+  aquacontrol: "",
+  agipedidos: "",
+  agivision: "",
+};
+
 /* ---------- Contenido de servicios ---------- */
 const SERVICES = {
   pbx: {
@@ -287,6 +295,15 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
   });
 })();
+
+/* ---------- Links a las páginas de cada app ---------- */
+$$("[data-app]").forEach((a) => {
+  const url = (APP_LINKS[a.dataset.app] || "").trim();
+  if (!url) return;
+  a.href = url;
+  a.hidden = false;
+  if (/^https?:\/\//.test(url) && !url.includes(location.hostname)) { a.target = "_blank"; a.rel = "noopener"; }
+});
 
 /* ---------- Año en el footer ---------- */
 $("#year").textContent = new Date().getFullYear();

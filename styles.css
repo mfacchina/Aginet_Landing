@@ -207,7 +207,11 @@ h2 em, h1 em { font-style: normal; background: linear-gradient(90deg, #c4b5fd, v
 .app h3 { font-size: 1.45rem; }
 .app p:not(.app__kicker) { color: var(--muted); font-size: .97rem; }
 .app .chips { margin: .2rem 0 .4rem; }
-.app__link { margin-top: auto; font-weight: 700; color: #c4b5fd; display: inline-flex; gap: .4rem; align-items: center; }
+.app__actions { margin-top: auto; display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; align-items: center; }
+.app__link { font-weight: 700; color: #c4b5fd; display: inline-flex; gap: .4rem; align-items: center; }
+.app__link--site { color: var(--text); padding: .5rem .9rem; border-radius: 999px; border: 1px solid var(--line-strong); transition: border-color .25s, background .25s; }
+.app__link--site:hover { border-color: var(--accent); background: var(--accent-soft); }
+.app__link[hidden] { display: none; }
 .app__link span { transition: transform .25s var(--ease); }
 .app__link:hover span { transform: translateX(4px); }
 
