@@ -292,6 +292,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
       `Me interesa: ${topic}.`,
       msg ? msg : "",
     ].filter(Boolean).join("\n");
+    medir("Lead", { content_name: topic, content_category: "formulario" });
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
   });
 })();
@@ -304,6 +305,25 @@ $$("[data-app]").forEach((a) => {
   a.hidden = false;
   if (/^https?:\/\//.test(url) && !url.includes(location.hostname)) { a.target = "_blank"; a.rel = "noopener"; }
 });
+
+/* ---------- Medición con el píxel de Meta ----------
+   Contact: cualquier clic que abre WhatsApp (botones, servicios, tarjetas).
+   Lead: envío del formulario de contacto (se mide en su propio handler).
+   ViewContent: clic en "Conocer ..." de cada app. */
+function medir(evento, datos) {
+  try { if (typeof window.fbq === "function") window.fbq("track", evento, datos || {}); } catch (e) {}
+}
+document.addEventListener("click", (e) => {
+  const a = e.target.closest && e.target.closest("a[href]");
+  if (!a) return;
+  if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(a.href)) {
+    const zona = a.closest("section[id]")?.id || (a.classList.contains("wa-float") ? "boton-flotante" : "nav");
+    const servicio = zona === "servicios" ? ($("#svcTitle")?.textContent || "") : "";
+    medir("Contact", { content_name: servicio || zona, content_category: "whatsapp" });
+  } else if (a.dataset.app) {
+    medir("ViewContent", { content_name: a.dataset.app, content_category: "app" });
+  }
+}, { capture: true });
 
 /* ---------- Año en el footer ---------- */
 $("#year").textContent = new Date().getFullYear();
