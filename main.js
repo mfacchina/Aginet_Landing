@@ -3,7 +3,7 @@
    Sin dependencias. Todo vanilla JS.
    ========================================================= */
 
-const WA_NUMBER = "5491153539292"; // (54 11) 5353-9292 — confirmar que sea el WhatsApp comercial
+const WA_NUMBER = "5491124080743"; // WhatsApp comercial: +54 9 11 2408-0743
 
 /* Páginas propias de cada app. Pegá la URL cuando esté publicada y el botón
    "Conocer ..." aparece solo en la tarjeta. Vacío = el botón queda oculto. */
